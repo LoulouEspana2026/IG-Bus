@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IGCSE Business 0264 - Complete Revision Guide</title>
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --panel: #ffffff;
+      --panel-soft: #eef4ff;
+      --primary: #1d4ed8;
+      --primary-dark: #172554;
+      --primary-light: #dfeafc;
+      --secondary: #2f59d9;
+      --accent: #0f766e;
+      --text: #1d2433;
+      --muted: #5b6475;
+      --border: #dde5f0;
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --danger: #dc2626;
+      --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      --sidebar-width: 300px;
+      --header-height: 86px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    img { max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--header-height);
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      box-shadow: 0 10px 22px rgba(23, 37, 84, 0.18);
+    }
+
+    .topbar-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      height: 100%;
+      padding: 0 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.14);
+      font-size: 1.5rem;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.7rem);
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+
+    .brand-text p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.78rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .menu-button {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.18);
+      cursor: pointer;
+      font-size: 1.3rem;
+    }
+
+    .layout {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      min-height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      background: var(--panel);
+      border-right: 1px solid var(--border);
+      position: sticky;
+      top: var(--header-height);
+      height: calc(100vh - var(--header-height));
+      overflow-y: auto;
+      transition: transform 0.25s ease;
+      box-shadow: 8px 0 16px rgba(15, 23, 42, 0.04);
+    }
+
+    .sidebar-header {
+      padding: 18px 18px 12px;
+      border-bottom: 1px solid var(--border);
+      background: var(--panel-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .nav-block {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-item {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      padding: 13px 18px;
+      color: var(--text);
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.92rem;
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .nav-item.special {
+      background: white;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .nav-section {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-section-header .nav-item {
+      background: #f8faff;
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 0.86rem;
+    }
+
+    .nav-chapters {
+      display: none;
+      background: white;
+    }
+
+    .nav-section.open .nav-chapters {
+      display: block;
+    }
+
+    .nav-chapters .nav-item {
+      padding-left: 34px;
+      font-size: 0.87rem;
+    }
+
+    .main {
+      flex: 1;
+      min-width: 0;
+      padding: 26px 28px 40px;
+    }
+
+    .content-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      border-radius: 18px;
+      padding: 42px 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 26px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      line-height: 1.15;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 720px;
+      font-size: 1.04rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin: 30px 0;
+    }
+
+    .feature {
+      text-align: center;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature .icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .card h2,
+    .card h3,
+    .card h4 {
+      margin-top: 0;
+      color: var(--primary-dark);
+    }
+
+    .card h2 {
+      font-size: clamp(1.5rem, 2vw, 2.1rem);
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--panel-soft);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin: 20px 0 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--primary-dark);
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafcff;
+    }
+
+    ul, ol {
+      margin-top: 8px;
+      padding-left: 22px;
+    }
+
+    li { margin: 6px 0; }
+
+    .tip-box,
+    .warning-box,
+    .info-box {
+      border-left: 5px solid;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .tip-box {
+      background: #edf6ff;
+      border-left-color: #2196f3;
+      color: #0a4a7a;
+    }
+
+    .warning-box {
+      background: #fff7ed;
+      border-left-color: var(--warning);
+      color: #8a4a00;
+    }
+
+    .info-box {
+      background: #ebfaf2;
+      border-left-color: var(--success);
+      color: #166534;
+    }
+
+    .formula-box {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      font-family: "Courier New", monospace;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .vocab-card {
+      background: #f8faff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      border-left: 5px solid var(--primary);
+      padding: 16px;
+    }
+
+    .vocab-card .term {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .vocab-card .definition {
+      margin-bottom: 8px;
+    }
+
+    .vocab-card .example {
+      border-top: 1px dashed var(--border);
+      padding-top: 8px;
+      color: var(--muted);
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    .mcq-block {
+      margin-top: 18px;
+    }
+
+    .mcq-question {
+      background: #f8faff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 18px 12px;
+      margin-bottom: 16px;
+    }
+
+    .mcq-question p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .mcq-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin: 8px 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mcq-option:hover {
+      border-color: var(--primary);
+      background: #f5f9ff;
+    }
+
+    .mcq-option input[type="radio"] {
+      accent-color: var(--primary);
+      width: 16px;
+      height: 16px;
+    }
+
+    .mcq-option.selected {
+      border-color: var(--primary);
+      background: #edf4ff;
+    }
+
+    .mcq-option.correct {
+      background: #ebfaf2;
+      border-color: var(--success);
+    }
+
+    .mcq-option.incorrect {
+      background: #fff1f2;
+      border-color: var(--danger);
+    }
+
+    .mcq-feedback {
+      display: none;
+      padding: 12px 14px;
+      margin-top: 10px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .mcq-feedback.show {
+      display: block;
+    }
+
+    .mcq-feedback.correct {
+      background: #ebfaf2;
+      border-left: 4px solid var(--success);
+      color: #166534;
+    }
+
+    .mcq-feedback.incorrect {
+      background: #fff1f2;
+      border-left: 4px solid var(--danger);
+      color: #991b1b;
+    }
+
+    .answer-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 10px;
+      padding: 11px 18px;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 0.15s ease;
+      box-shadow: 0 10px 20px rgba(29, 78, 216, 0.18);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--primary-dark);
+      box-shadow: none;
+    }
+
+    .score-box {
+      background: #edf6ff;
+      border: 1px solid #d4eaff;
+      color: var(--primary-dark);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-weight: 700;
+    }
+
+    .exam-box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      background: white;
+      margin-bottom: 18px;
+    }
+
+    .exam-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .badge.orange {
+      background: #fff2d6;
+      color: #8c5b00;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      resize: vertical;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      background: white;
+      color: var(--text);
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+    }
+
+    .model-answer {
+      display: none;
+      background: #ebfaf2;
+      border: 1px solid #cfeee0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 14px;
+      color: #14532d;
+    }
+
+    .model-answer.show {
+      display: block;
+    }
+
+    .placeholder {
+      background: #f8fafc;
+      border: 1px dashed var(--border);
+      color: var(--muted);
+      border-radius: 12px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .study-notes h4 {
+      margin: 22px 0 8px;
+      color: var(--primary-dark);
+    }
+
+    .study-notes h4:first-child {
+      margin-top: 0;
+    }
+
+    .study-notes ul {
+      margin-top: 6px;
+    }
+
+    .study-note-intro {
+      margin-top: 0;
+    }
+
+    @media (max-width: 980px) {
+      .menu-button { display: inline-flex; align-items: center; justify-content: center; }
+      .layout { display: block; }
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        z-index: 40;
+        transform: translateX(-110%);
+      }
+      .sidebar.open { transform: translateX(0); }
+      .main { padding: 22px 16px 32px; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner { padding: 0 14px; }
+      .brand-text p { display: none; }
+      .card { padding: 18px 16px; }
+      .hero { padding: 30px 20px; }
+      .answer-actions { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">📚</div>
+        <div class="brand-text">
+          <h1>IGCSE Business Studies 0264</h1>
+          <p>Complete Revision Guide</p>
+        </div>
+      </div>
+      <button class="menu-button" onclick="toggleSidebar()" aria-label="Toggle sidebar">☰</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">Course Navigation</div>
+
+      <div class="nav-block">
+        <button class="nav-item special" onclick="showSection('home', this)">🏠 Home</button>
+        <button class="nav-item special" onclick="showSection('exam-skills', this)">🎯 Exam Skills</button>
+        <button class="nav-item special" onclick="showSection('formulas', this)">📐 Formulas</button>
+      </div>
+
+      <div class="nav-section open">
+        <div class="nav-section-header">
+          <button class="nav-item" onclick="toggleSection(this.parentElement.parentElement)">Section 1: Understanding Business Activity <span>▾</span></button>
+        </div>
+        <div class="nav-chapters">
+          <button class="nav-item" onclick="showChapter(1, this)">Ch 1: Business Activity and Economic Sectors</button>
+          <button class="nav-item" onclick="showChapter(2, this)">Ch 2: Enterprise, Business Growth and Size</button>
+          <button class="nav-item" onclick="showChapter(3, this)">Ch 3: Types of Business Organisations</button>
+          <button class="nav-item" onclick="showChapter(4, this)">Ch 4: Business Objectives and Stakeholder Objectives</button>
+        </div>
+      </div>
+
+      <div class="nav-section open">
+        <div class="nav-section-header">
+          <button class="nav-item" onclick="toggleSection(this.parentElement.parentElement)">Section 2: People in Business <span>▾</span></button>
+        </div>
+        <div class="nav-chapters">
+          <button class="nav-item" onclick="showChapter(5, this)">Ch 5: Human Resource Management</button>
+          <button class="nav-item" onclick="showChapter(6, this)">Ch 6: Organisation and Management</button>
+          <button class="nav-item" onclick="showChapter(7, this)">Ch 7: Methods of Communication</button>
+          <button class="nav-item" onclick="showChapter(8, this)">Ch 8: Motivating Employees</button>
+        </div>
+      </div>
+
+      <div class="nav-section open">
+        <div class="nav-section-header">
+          <button class="nav-item" onclick="toggleSection(this.parentElement.parentElement)">Section 3: Marketing <span>▾</span></button>
+        </div>
+        <div class="nav-chapters">
+          <button class="nav-item" onclick="showChapter(9, this)">Ch 9: Marketing and the Market</button>
+          <button class="nav-item" onclick="showChapter(10, this)">Ch 10: Market Research</button>
+          <button class="nav-item" onclick="showChapter(11, this)">Ch 11: The Marketing Mix - Product</button>
+          <button class="nav-item" onclick="showChapter(12, this)">Ch 12: The Marketing Mix - Price</button>
+          <button class="nav-item" onclick="showChapter(13, this)">Ch 13: The Marketing Mix - Place</button>
+          <button class="nav-item" onclick="showChapter(14, this)">Ch 14: The Marketing Mix - Promotion</button>
+          <button class="nav-item" onclick="showChapter(15, this)">Ch 15: E-commerce</button>
+          <button class="nav-item" onclick="showChapter(16, this)">Ch 16: Marketing Strategy, Entering New Markets and Legal Controls</button>
+        </div>
+      </div>
+
+      <div class="nav-section open">
+        <div class="nav-section-header">
+          <button class="nav-item" onclick="toggleSection(this.parentElement.parentElement)">Section 4: Operations Management <span>▾</span></button>
+        </div>
+        <div class="nav-chapters">
+          <button class="nav-item" onclick="showChapter(17, this)">Ch 17: Production of Goods and Services</button>
+          <button class="nav-item" onclick="showChapter(18, this)">Ch 18: Technology and Production</button>
+          <button class="nav-item" onclick="showChapter(19, this)">Ch 19: Sustainable Production</button>
+          <button class="nav-item" onclick="showChapter(20, this)">Ch 20: Costs, Scale of Production and Break-even</button>
+          <button class="nav-item" onclick="showChapter(21, this)">Ch 21: Quality of Goods and Services</button>
+          <button class="nav-item" onclick="showChapter(22, this)">Ch 22: Location Decisions</button>
+        </div>
+      </div>
+
+      <div class="nav-section open">
+        <div class="nav-section-header">
+          <button class="nav-item" onclick="toggleSection(this.parentElement.parentElement)">Section 5: Financial Information and Decisions <span>▾</span></button>
+        </div>
+        <div class="nav-chapters">
+          <button class="nav-item" onclick="showChapter(23, this)">Ch 23: Business Finance</button>
+          <button class="nav-item" onclick="showChapter(24, this)">Ch 24: Cash Flow Forecast</button>
+          <button class="nav-item" onclick="showChapter(25, this)">Ch 25: Profit and Loss</button>
+          <button class="nav-item" onclick="showChapter(26, this)">Ch 26: Statement of Financial Position</button>
+          <button class="nav-item" onclick="showChapter(27, this)">Ch 27: Analysis of Accounts</button>
+        </div>
+      </div>
+
+      <div class="nav-section open">
+        <div class="nav-section-header">
+          <button class="nav-item" onclick="toggleSection(this.parentElement.parentElement)">Section 6: External Influences on Business Activity <span>▾</span></button>
+        </div>
+        <div class="nav-chapters">
+          <button class="nav-item" onclick="showChapter(28, this)">Ch 28: Economic Issues</button>
+          <button class="nav-item" onclick="showChapter(29, this)">Ch 29: Business and the International Economy</button>
+          <button class="nav-item" onclick="showChapter(30, this)">Ch 30: Business and the Environment</button>
+          <button class="nav-item" onclick="showChapter(31, this)">Ch 31: Business and Ethical Issues, and Pressure Groups</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="content-wrap" id="main-content"></div>
+    </main>
+  </div>
+
+  <script>
+    const chapters = {};
+
+    function addChapter(num, title, vocabData, notesHtml, mcqData, examData) {
+      const vocabHtml = `
+        <div class="vocab-grid">
+          ${vocabData.map(([term, definition, example]) => `
+            <div class="vocab-card">
+              <div class="term">${term}</div>
+              <div class="definition">${definition}</div>
+              <div class="example"><strong>Example:</strong> ${example}</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      const mcqHtml = mcqData.map(([question, options, answer, explanation], idx) => {
+        const letters = ['A', 'B', 'C', 'D'];
+        return `
+          <div class="mcq-question" data-answer="${answer}">
+            <p>${idx + 1}. ${question}</p>
+            ${options.map((opt, i) => `
+              <label class="mcq-option">
+                <input type="radio" name="q-${num}-${idx}" value="${letters[i]}">
+                <span>${letters[i]}) ${opt}</span>
+              </label>
+            `).join('')}
+            <div class="mcq-feedback"></div>
+          </div>
+        `;
+      }).join('');
+
+      const examHtml = examData.map(([label, command, marks, prompt, modelAnswer]) => `
+        <div class="exam-box">
+          <div class="exam-header">
+            <div class="exam-meta">
+              <strong>${label}</strong>
+              <span class="badge orange">${command}</span>
+              <span class="badge">${marks}</span>
+            </div>
+          </div>
+          <p>${prompt}</p>
+          <textarea placeholder="Type your answer here..."></textarea>
+          <div class="answer-actions">
+            <button class="btn secondary" type="button" onclick="toggleModelAnswer(this)">Show Model Answer</button>
+          </div>
+          <div class="model-answer">
+            <strong>Model Answer:</strong>
+            <div>${modelAnswer}</div>
+          </div>
+        </div>
+      `).join('');
+
+      chapters[num] = `
+        <div class="card">
+          <h2>Chapter ${num}: ${title}</h2>
+        </div>
+
+        <div class="card">
+          <h3>Key Vocabulary</h3>
+          ${vocabHtml}
+        </div>
+
+        <div class="card">
+          <h3>Textbook Notes</h3>
+          ${notesHtml}
+        </div>
+
+        <div class="card">
+          <h3>Check Your Understanding</h3>
+          <div class="mcq-block">${mcqHtml}</div>
+          <div class="answer-actions">
+            <button class="btn" type="button" onclick="checkMCQAnswers(this)">Check Answers</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Exam Practice</h3>
+          ${examHtml}
+        </div>
+      `;
+    }
+
+    function getHomeContent() {
+      return `
+        <div class="hero">
+          <h1>🎓 IGCSE Business Studies 0264</h1>
+          <p>Your complete revision companion for Cambridge IGCSE Business Studies. Master all 6 sections with notes, interactive quizzes, exam practice questions and model answers.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="icon">📚</div>
+            <h3>Complete Textbook</h3>
+            <p>Detailed notes for all 31 chapters across 6 sections.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">✅</div>
+            <h3>Interactive MCQs</h3>
+            <p>Test your understanding with instant feedback.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">📝</div>
+            <h3>Exam Practice</h3>
+            <p>Improve confidence using model answers.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🎯</div>
+            <h3>Exam Skills</h3>
+            <p>Learn how to answer command words correctly.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>📋 Course Structure</h2>
+          <table>
+            <tr><th>Section</th><th>Topic</th><th>Chapters</th></tr>
+            <tr><td><strong>1</strong></td><td>Understanding Business Activity</td><td>1-4</td></tr>
+            <tr><td><strong>2</strong></td><td>People in Business</td><td>5-8</td></tr>
+            <tr><td><strong>3</strong></td><td>Marketing</td><td>9-16</td></tr>
+            <tr><td><strong>4</strong></td><td>Operations Management</td><td>17-22</td></tr>
+            <tr><td><strong>5</strong></td><td>Financial Information and Decisions</td><td>23-27</td></tr>
+            <tr><td><strong>6</strong></td><td>External Influences on Business Activity</td><td>28-31</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>🎯 How to Use This Website</h2>
+          <ol>
+            <li><strong>Read the textbook notes</strong> carefully before starting each chapter.</li>
+            <li><strong>Learn the key vocabulary</strong> for each topic to improve terminology.</li>
+            <li><strong>Complete the MCQ quiz</strong> to check understanding.</li>
+            <li><strong>Practice the exam questions</strong> and then compare to the model answer.</li>
+            <li><strong>Review exam skills</strong> to understand command words and answer structure.</li>
+            <li><strong>Use formulas regularly</strong> to prepare for numerical questions.</li>
+          </ol>
+        </div>
+      `;
+    }
+
+    function getExamSkillsContent() {
+      return `
+        <div class="card">
+          <h2>🎯 Command Words in IGCSE Business</h2>
+          <p>Understanding command words is essential for exam success. Different words require different answer styles.</p>
+        </div>
+
+        <div class="card">
+          <h3>📝 Define (2 marks)</h3>
+          <div class="skill-box info-box">
+            Give a short and precise meaning using correct business vocabulary.
+          </div>
+          <p><strong>Example:</strong> Define 'factors of production'.</p>
+          <p><strong>Model Answer:</strong> Factors of production are the resources needed to produce goods and services. They include land, labour, capital, and enterprise.</p>
+        </div>
+
+        <div class="card">
+          <h3>📋 Identify / State</h3>
+          <div class="tip-box">Name or list the points required. No long explanation is needed.</div>
+          <p><strong>Example:</strong> Identify two external stakeholders.</p>
+          <p><strong>Model answer:</strong> Customers and suppliers.</p>
+        </div>
+
+        <div class="card">
+          <h3>💡 Explain (4-6 marks)</h3>
+          <div class="warning-box">Use KAA: Knowledge, Application, Analysis.</div>
+          <p>State a point, link it to the business situation, and explain why it matters.</p>
+        </div>
+
+        <div class="card">
+          <h3>⚖️ Justify / Discuss</h3>
+          <div class="info-box">Give both sides of the argument and reach a clear conclusion.</div>
+          <p>Explain why one option is better than another and include a final judgement.</p>
+        </div>
+
+        <div class="card">
+          <h3>🔢 Calculate</h3>
+          <div class="formula-box">Revenue = Selling price × Quantity sold<br>Gross Profit = Revenue - Cost of sales<br>Profit = Revenue - Total costs</div>
+          <p>Always show your working and include units such as $, %, and units.</p>
+        </div>
+      `;
+    }
+
+    function getFormulasContent() {
+      return `
+        <div class="card">
+          <h2>📐 Essential Formulas for IGCSE Business</h2>
+          <p>These formulas appear regularly in Paper 1 and Paper 2. Learn them and practise using them in context.</p>
+        </div>
+
+        <div class="card">
+          <h3>📊 Marketing</h3>
+          <div class="formula-box">Market Share = (Sales of business ÷ Total sales in market) × 100</div>
+        </div>
+
+        <div class="card">
+          <h3>🏭 Production and Costs</h3>
+          <div class="formula-box">Labour Productivity = Output per period ÷ Number of employees<br>Variable Cost per Unit = Total variable cost ÷ Number of units<br>Total Variable Costs = Variable cost per unit × Number of units<br>Total Cost = Fixed costs + Total variable costs<br>Average Cost = Total cost ÷ Number of units<br>Contribution per Unit = Selling price - Variable cost per unit<br>Break-even Output = Fixed costs ÷ Contribution per unit<br>Margin of Safety = Actual output - Break-even output</div>
+        </div>
+
+        <div class="card">
+          <h3>💰 Finance</h3>
+          <div class="formula-box">Revenue = Selling price per unit × Number of units sold<br>Gross Profit = Revenue - Cost of sales<br>Profit = Total revenue - Total costs<br>Working Capital = Current assets - Current liabilities</div>
+        </div>
+
+        <div class="card">
+          <h3>📈 Profitability Ratios</h3>
+          <div class="formula-box">Gross Profit Margin = (Gross profit ÷ Revenue) × 100<br>Profit Margin = (Profit ÷ Revenue) × 100<br>ROCE = (Profit ÷ Capital employed) × 100</div>
+        </div>
+
+        <div class="card">
+          <h3>💧 Liquidity Ratios</h3>
+          <div class="formula-box">Current Ratio = Current assets ÷ Current liabilities<br>Acid Test Ratio = (Current assets - Inventory) ÷ Current liabilities</div>
+        </div>
+      `;
+    }
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+
+    function toggleSection(section) {
+      section.classList.toggle('open');
+    }
+
+    function showSection(key, button) {
+      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+      if (button) button.classList.add('active');
+
+      const main = document.getElementById('main-content');
+      if (key === 'home') main.innerHTML = getHomeContent();
+      if (key === 'exam-skills') main.innerHTML = getExamSkillsContent();
+      if (key === 'formulas') main.innerHTML = getFormulasContent();
+
+      if (window.innerWidth <= 980) {
+        document.getElementById('sidebar').classList.remove('open');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showChapter(chapterNum, button) {
+      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+      if (button) button.classList.add('active');
+
+      const main = document.getElementById('main-content');
+      if (chapters[chapterNum]) {
+        main.innerHTML = chapters[chapterNum];
+      } else {
+        main.innerHTML = `
+          <div class="card">
+            <h2>Chapter ${chapterNum}</h2>
+            <div class="placeholder">This chapter is ready for more detail. Add your teacher notes, examples and questions here.</div>
+          </div>
+        `;
+      }
+
+      if (window.innerWidth <= 980) {
+        document.getElementById('sidebar').classList.remove('open');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function checkMCQAnswers(button) {
+      const container = button.closest('.card');
+      const questions = container.querySelectorAll('.mcq-question');
+      let correct = 0;
+
+      questions.forEach((questionEl) => {
+        const selected = questionEl.querySelector('input[type="radio"]:checked');
+        const correctValue = questionEl.dataset.answer;
+        const options = questionEl.querySelectorAll('.mcq-option');
+        const feedback = questionEl.querySelector('.mcq-feedback');
+
+        options.forEach(opt => {
+          opt.classList.remove('correct', 'incorrect', 'selected');
+          const input = opt.querySelector('input');
+          if (input && input.checked) opt.classList.add('selected');
+        });
+
+        if (!selected) {
+          feedback.textContent = 'Please select an answer.';
+          feedback.className = 'mcq-feedback show incorrect';
+          return;
+        }
+
+        const chosen = selected.value;
+        const correctOption = questionEl.querySelector(`input[value="${correctValue}"]`).closest('.mcq-option');
+
+        if (chosen === correctValue) {
+          selected.closest('.mcq-option').classList.add('correct');
+          feedback.textContent = '✓ Correct!';
+          feedback.className = 'mcq-feedback show correct';
+          correct++;
+        } else {
+          selected.closest('.mcq-option').classList.add('incorrect');
+          correctOption.classList.add('correct');
+          feedback.textContent = `✗ Incorrect. The correct answer is ${correctOption.querySelector('span').textContent}.`;
+          feedback.className = 'mcq-feedback show incorrect';
+        }
+      });
+
+      const score = document.createElement('div');
+      score.className = 'score-box';
+      score.textContent = `You scored ${correct} out of ${questions.length}.`;
+      const old = container.querySelector('.score-box');
+      if (old) old.remove();
+      button.parentElement.appendChild(score);
+    }
+
+    function toggleModelAnswer(button) {
+      const examBox = button.closest('.exam-box');
+      const answerBox = examBox.querySelector('.model-answer');
+      const open = answerBox.classList.toggle('show');
+      button.textContent = open ? 'Hide Model Answer' : 'Show Model Answer';
+    }
+
+    const chapterStudyNotes = {
+      1: {
+        vocab: [
+          ['Business activity', 'Combining resources to produce goods or services that satisfy customer needs and wants.'],
+          ['Factors of production', 'The resources used in production: land, labour, capital and enterprise.'],
+          ['Added value', 'Selling price minus the cost of bought-in materials or components.'],
+          ['Opportunity cost', 'The value of the next best alternative given up when a choice is made.']
+        ],
+        sections: [
+          ['What businesses do', ['Businesses identify needs and wants, organise resources and produce goods or services. Customers pay for output; revenue is used to cover costs and, where possible, earn profit.', 'Scarcity means resources are limited while wants are numerous. A business therefore has to choose how to use its resources. Those choices create opportunity costs.']],
+          ['The four factors of production', ['Land means natural resources and the site used. Labour is the physical and mental work of employees. Capital includes man-made resources such as equipment, tools and buildings.', 'Enterprise is the ability to organise the other factors, make decisions and take the risk of running a business. The entrepreneur may earn profit, but may also face losses.']],
+          ['Added value and sectors', ['Added value = selling price - cost of bought-in materials. A business can raise it through design, quality, service, convenience, branding or by controlling input costs.', 'The primary sector extracts natural resources; the secondary sector processes materials or manufactures; the tertiary sector provides services. One product can involve all three sectors through its supply chain.', 'The private sector is owned by individuals or organisations; the public sector is controlled by government and commonly provides services such as education or health care. Each sector has different objectives and accountability.']]
+        ]
+      },
+      2: {
+        vocab: [
+          ['Entrepreneur', 'A person who identifies an opportunity, organises resources and accepts the risk of starting a business.'],
+          ['Business plan', 'A document setting out a business idea, objectives, resources, market and financial forecasts.'],
+          ['Internal growth', 'Expansion using the business’s own operations, such as opening another branch.'],
+          ['Economies of scale', 'Reductions in average cost that may occur as a business increases its scale of operation.']
+        ],
+        sections: [
+          ['Enterprise and starting a business', ['Entrepreneurs spot gaps in the market, bring together the factors of production and make decisions despite uncertainty. Useful qualities include initiative, creativity, persistence and willingness to take calculated risks.', 'A business plan explains the product or service, target customers, competition, marketing, operations, staffing, finance and objectives. It helps the owner plan and can support applications for finance, but forecasts depend on assumptions and cannot guarantee success.', 'Government support may include advice, training, grants, loans or other start-up schemes. Availability and conditions vary by country.']],
+          ['Measuring size and growth', ['Business size can be measured by employees, sales revenue, capital employed or output. Each measure has limitations: for example, revenue varies with prices, and a capital-intensive firm may employ relatively few workers.', 'Internal growth happens within the business, for example by increasing capacity, introducing products or opening locations. External growth occurs through a merger, takeover or joint venture and can increase scale quickly.', 'Owners may seek growth for higher sales, market share, influence or economies of scale. Growth can also increase complexity, costs, communication problems and the risk of diseconomies of scale.']],
+          ['Why firms remain small or fail', ['Some owners prefer control, personal service or a manageable workload; some markets are local or specialised, while finance and competition can limit expansion.', 'Success depends on factors such as a clear customer need, adequate finance, effective management, suitable location, cost control and adaptation to change. Poor planning, weak cash flow, intense competition or failing to respond to customers can contribute to failure.']]
+        ]
+      },
+      3: {
+        vocab: [
+          ['Sole trader', 'A business owned by one person; the owner and business are not legally separate in the usual unincorporated form.'],
+          ['Limited liability', 'Protection that generally limits an owner’s financial loss to the amount invested in the company.'],
+          ['Private limited company', 'An incorporated company whose shares are offered privately rather than to the public on a stock exchange.'],
+          ['Franchise', 'An arrangement allowing a franchisee to use a franchisor’s brand and business model under agreed conditions.']
+        ],
+        sections: [
+          ['Unincorporated businesses', ['A sole trader is usually straightforward to establish and gives the owner control and the right to keep profits. The owner may have unlimited liability and may find it difficult to raise large amounts of finance.', 'In a partnership, two or more owners share responsibilities, skills and profits under an agreement. Partners may disagree; in a traditional partnership, liability may be unlimited unless a different legal form applies.', 'Unincorporated businesses are not legally separate from their owners in the same way as companies. Owners should understand the applicable local law and the consequences for liability.']],
+          ['Companies and ownership', ['A limited company has a separate legal identity. Shareholders provide capital and their liability is normally limited to their investment. Companies must meet legal reporting and administrative requirements.', 'A private limited company cannot generally offer its shares to the public. A public limited company can offer shares to the public, potentially raising substantial finance, but ownership may be diluted and reporting obligations are greater.', 'Ownership and control can be separated: shareholders own the company while directors manage it. Shareholders may influence major decisions through voting, while directors make day-to-day decisions.']],
+          ['Other forms and choosing', ['A franchisee pays fees and follows the franchisor’s system in return for a recognised brand, support and an established format. The franchisor can expand using franchisees’ investment, but must protect standards and reputation.', 'A joint venture lets organisations share resources, expertise, costs and risks for a project or market. A social enterprise trades to meet social or environmental aims and reinvests some or all of its surplus in those aims.', 'Choose a form by comparing control, liability, finance needs, continuity, size and legal obligations against the owner’s objectives. There is no single best form for every business.']]
+        ]
+      },
+      4: {
+        vocab: [
+          ['Business objective', 'A target that guides a business’s decisions and helps assess its performance.'],
+          ['Stakeholder', 'A person or group affected by, or able to affect, a business and its decisions.'],
+          ['Market share', 'A business’s sales as a percentage of total sales in the market.'],
+          ['Stakeholder conflict', 'A situation where the objectives of different interested groups are incompatible.']
+        ],
+        sections: [
+          ['Objectives and why they change', ['Common objectives include survival, profit, growth, increased market share, customer service and social or environmental aims. The priority depends on the business’s age, ownership, market conditions and resources.', 'Objectives give direction, help managers make choices and provide targets against which results can be measured. A new firm may prioritise survival, while an established firm may pursue growth or returns to owners.', 'Objectives can change after expansion, new competition, a change in ownership, economic conditions or a change in stakeholder priorities.']],
+          ['Stakeholders and their aims', ['Internal stakeholders include owners, managers and employees. Owners may seek profit or growth; managers may value performance and status; employees may seek fair pay, security and good conditions.', 'External stakeholders include customers, suppliers, lenders, government, local communities and pressure groups. Customers value quality and price; suppliers want reliable payment; lenders want repayment; government expects compliance and tax.', 'A decision can benefit one group while imposing costs on another. For example, lower prices may help customers but reduce profit available to owners, while expansion may create jobs but increase local congestion.']],
+          ['Managing conflicts and measuring progress', ['Managers should identify who is affected, assess the likely consequences and communicate decisions. Trade-offs may be managed through negotiation, consultation and policies that balance short- and long-term outcomes.', 'Market share = business sales ÷ total market sales × 100. It indicates the business’s share of market activity, but should be considered alongside profit, cash flow and customer satisfaction.', 'An objective is useful when it is clear, measurable, realistic and time-bound. Targets should be reviewed when conditions change.']]
+        ]
+      },
+      5: {
+        vocab: [
+          ['Job description', 'A document describing the duties and responsibilities of a job.'],
+          ['Person specification', 'A description of the skills, qualifications and qualities required from an applicant.'],
+          ['Induction training', 'Training that introduces a new employee to the job, workplace and organisation.'],
+          ['Redundancy', 'The removal of a job because it is no longer required, rather than because of the employee’s conduct.']
+        ],
+        sections: [
+          ['Workforce planning and recruitment', ['HR planning estimates how many employees and what skills will be needed. When a vacancy arises, managers analyse the job and prepare a job description and person specification.', 'Recruitment can be internal, by promoting or transferring an existing employee, or external, by seeking applicants outside the business. Internal recruitment is often quicker and can motivate staff; external recruitment widens the applicant pool and can bring new skills.', 'A vacancy is advertised through a suitable channel. Applications are shortlisted against the person specification; selection may use interviews, tests, references or practical tasks. The method should be relevant, fair and consistent.']],
+          ['Employment and training', ['Full-time workers usually have longer contracted hours; part-time workers work fewer hours. Flexible arrangements can help match staffing to demand but may create scheduling or coordination challenges.', 'Induction explains procedures, safety, people and expectations. On-the-job training takes place while working and is practical; off-the-job training takes place away from normal duties and may provide specialist instruction.', 'Training can improve skills, productivity, quality and motivation. It has costs, and the business may not receive the full benefit if a trained employee leaves.']],
+          ['Managing change and employment rights', ['Downsizing reduces the size of the workforce, for example through redundancies. It may lower costs but can reduce morale, lose skills and increase the workload of remaining employees.', 'Employment law varies by jurisdiction but commonly covers contracts, discrimination, health and safety, minimum conditions and dismissal procedures. Employers should use current local rules and keep appropriate records.', 'Selection and promotion criteria should relate to the job. Clear procedures reduce unfair treatment and help protect both employees and the organisation.']]
+        ]
+      },
+      6: {
+        vocab: [
+          ['Chain of command', 'The route through which instructions and authority pass from senior managers to employees.'],
+          ['Span of control', 'The number of employees who report directly to a manager.'],
+          ['Delegation', 'Giving a subordinate authority to carry out a task while the manager remains accountable.'],
+          ['Decentralisation', 'Giving lower levels of management greater authority to make decisions.']
+        ],
+        sections: [
+          ['Organisation structure', ['An organisation chart shows roles, reporting relationships and levels of authority. The chain of command indicates who reports to whom; a shorter chain can speed communication but may increase managers’ workload.', 'A manager’s span of control is the number of direct subordinates. A wide span can reduce management layers and encourage autonomy; a narrow span allows closer supervision but may add cost and slow decisions.', 'Tall structures have several levels and often narrower spans; flat structures have fewer levels and wider spans. Delayering removes management levels to reduce cost or speed communication, but may leave managers with more responsibility.']],
+          ['Management and leadership', ['Management includes setting objectives and planning, organising resources, coordinating work, directing staff and monitoring performance. Managers communicate targets and respond when results differ from plans.', 'Delegation develops employees and frees managers for higher-level work. It works best when the task, authority, expected outcome and support are clear. Managers remain accountable for the overall result.', 'Autocratic leadership centralises decisions and can be useful when speed or tight control matters. Democratic leadership consults employees and can improve commitment and ideas. Laissez-faire leadership gives capable staff considerable freedom but may lack coordination if roles are unclear.']],
+          ['Centralisation and employee representation', ['Centralised decisions are made mainly at senior levels, which can create consistency and control. Decentralisation gives local managers flexibility and may improve responsiveness, but can lead to inconsistent decisions.', 'Trade unions represent employees in issues such as pay, conditions and workplace change. Collective negotiation can give workers a stronger voice; disputes may arise if agreement is not reached.', 'The suitable structure and leadership approach depend on business size, workforce skills, urgency, risk and the need for local knowledge.']]
+        ]
+      },
+      7: {
+        vocab: [
+          ['Internal communication', 'Information exchanged between people within the same organisation.'],
+          ['External communication', 'Information exchanged between a business and people or organisations outside it.'],
+          ['Feedback', 'A response that helps the sender know whether a message was received and understood.'],
+          ['Communication barrier', 'Anything that prevents a message from being received or understood correctly.']
+        ],
+        sections: [
+          ['Effective communication', ['Communication involves a sender, a message, a channel and a receiver. Feedback confirms understanding and allows questions or correction.', 'One-way communication sends information without a response; it can be quick for simple instructions but gives little evidence of understanding. Two-way communication allows feedback and discussion, though it may take longer.', 'Internal communication supports coordination and motivation. External communication connects the business with customers, suppliers, lenders, government and other stakeholders.']],
+          ['Methods and direction', ['Written methods such as email, letters and reports create a record and suit detailed information, but may be slow or overlooked. Oral methods such as meetings and telephone calls allow immediate clarification but may leave no written record.', 'Visual methods such as diagrams, charts and signs can make information easier to understand quickly. Digital tools can reach people rapidly, but access, privacy and message overload need consideration.', 'Communication can flow downwards as instructions, upwards as reports or feedback, and horizontally between colleagues or departments. The appropriate direction depends on the purpose.']],
+          ['Barriers and consequences', ['Barriers include language differences, jargon, noise, poor technology, unsuitable channels, unclear wording, lack of attention and information overload. Cultural differences or a large number of management layers can also distort messages.', 'Choose a channel that suits urgency, complexity and confidentiality. Use clear language, check understanding, invite feedback and provide translation or training when needed.', 'Poor communication can cause mistakes, delays, low morale, unsafe work or lost customers. Effective communication improves coordination, service and decision-making.']]
+        ]
+      },
+      8: {
+        vocab: [
+          ['Motivation', 'The willingness of employees to work towards the organisation’s goals.'],
+          ['Maslow’s hierarchy', 'A theory that groups human needs from basic needs to self-fulfilment.'],
+          ['Hygiene factors', 'In Herzberg’s theory, conditions that reduce dissatisfaction but may not by themselves create lasting motivation.'],
+          ['Job enrichment', 'Giving a job more responsibility, variety or meaningful challenge.']
+        ],
+        sections: [
+          ['Why motivation matters', ['Motivated employees may work more productively, provide better service, make fewer errors and be more willing to stay. Lower labour turnover and absenteeism can reduce recruitment and training costs.', 'Motivation is not identical for every person. Managers should consider the work, employee needs, fairness and business objectives rather than assume that one reward suits everyone.']],
+          ['Motivation theories', ['Maslow’s model groups needs as physiological, safety, social, esteem and self-actualisation. The model suggests that unmet lower-level needs can take priority, but people may experience needs differently.', 'Herzberg distinguishes hygiene factors, such as pay, job security and working conditions, from motivators such as achievement, responsibility and recognition. Improving hygiene factors may prevent dissatisfaction; meaningful work can support motivation.', 'Scientific management associated with Taylor emphasises standardised tasks, close measurement and financial incentives. It may raise output in routine work but can make jobs repetitive and reduce autonomy.']],
+          ['Financial and non-financial methods', ['Financial methods include wages, salaries, piece rates, commission, bonuses and profit-sharing. They can reward performance, but poorly designed targets may encourage quantity over quality or create unhealthy competition.', 'Non-financial methods include praise, promotion, training, job rotation, job enlargement, job enrichment, participation and teamwork. These can increase responsibility and interest but require suitable roles and management support.', 'Choose methods by considering affordability, how performance can be measured, the type of work, employee preferences and possible unintended effects.']]
+        ]
+      },
+      9: {
+        vocab: [
+          ['Market', 'All customers and potential customers for a particular good or service.'],
+          ['Market segment', 'A group of customers with similar characteristics or needs.'],
+          ['Niche market', 'A small, specialised part of a larger market.'],
+          ['Market share', 'A business’s sales expressed as a percentage of total market sales.']
+        ],
+        sections: [
+          ['Marketing and the market', ['Marketing identifies customer needs, anticipates changes and satisfies customers in a way that helps meet business objectives. It includes research, product decisions, pricing, distribution and promotion, not promotion alone.', 'A market contains actual and potential buyers and competing sellers. Businesses study customer preferences, income, trends and competitors before choosing how to serve the market.', 'A mass market has a broad customer base and may support large-scale production. A niche market serves a narrower group with more specialised needs; it may allow distinct products but has fewer potential customers.']],
+          ['Segmentation and customer focus', ['Markets can be segmented by factors such as age, income, location, lifestyle or buying behaviour. Segmentation helps a business tailor its offer and communicate with the intended group.', 'A customer-focused business collects feedback and adapts its product and service to customer requirements. This can build loyalty, although adapting to every preference may raise costs.', 'Market share can indicate competitive position, but a large share does not automatically mean high profit. Consider costs, margins, customer retention and changes in the total market.']],
+          ['Marketing objectives', ['Marketing objectives should be specific and measurable, such as increasing sales, entering a segment or improving customer retention within a set period.', 'Objectives must fit the business’s overall aims, available resources and market conditions. Managers review results and adjust plans when assumptions prove inaccurate.']]
+        ]
+      },
+      10: {
+        vocab: [
+          ['Primary research', 'New information collected directly for the business’s specific research purpose.'],
+          ['Secondary research', 'Information already collected by another organisation or for another purpose.'],
+          ['Sample', 'A selected group of people used to represent a wider target population.'],
+          ['Questionnaire', 'A set of questions used to collect information from respondents.']
+        ],
+        sections: [
+          ['Why and how to research', ['Market research helps estimate demand, understand customer preferences, identify competitors, test a product idea and reduce uncertainty before a decision. Research informs decisions but cannot guarantee that customers will behave as predicted.', 'Primary methods include surveys, interviews, focus groups and observation. They can be tailored to the question, but take time and may be costly or affected by biased questions and answers.', 'Secondary sources include government statistics, trade publications, competitor information, reports and business records. They are often faster and cheaper, but may be outdated, incomplete or collected for a different purpose.']],
+          ['Sampling and data quality', ['A census asks the whole target population; a sample asks only a selection. Sampling saves time and money, but the result is useful only if the sample is sufficiently representative.', 'Sample size, selection method, question wording, response rate and timing affect reliability. A biased or very small sample may not reflect the whole market.', 'Quantitative data can be counted and compared; qualitative data explores opinions and reasons. Both types can be useful, depending on the decision.']],
+          ['Analysing results', ['Present results in clear tables, charts or percentages and look for patterns, differences and changes. Check the base number behind a percentage and distinguish correlation from cause.', 'Compare findings with the research objective and other reliable sources. Unexpected or contradictory results may require follow-up research.', 'The best method depends on the research question, target group, budget, time and required accuracy.']]
+        ]
+      },
+      11: {
+        vocab: [
+          ['Product', 'A good or service offered to satisfy customer needs or wants.'],
+          ['Brand', 'A name, design or identity that distinguishes an offering from competitors.'],
+          ['Unique selling point', 'A feature or benefit that makes a product distinct in the eyes of customers.'],
+          ['Product life cycle', 'The stages through which a product may pass from launch to withdrawal.']
+        ],
+        sections: [
+          ['Product decisions', ['A product includes its features, quality, design, packaging, brand and after-sales service. These elements should match the target customer and the position the business wants in the market.', 'A strong brand can help customers recognise the product, distinguish it from competitors and develop loyalty. Building a brand requires consistent quality and communication, and reputation can be damaged by poor performance.', 'A unique selling point (USP) gives customers a reason to choose the product. It should be relevant and credible, not simply a feature that customers do not value.']],
+          ['Product life cycle', ['The usual stages are development, introduction, growth, maturity and decline. Sales and profit patterns differ by product; the stages are a useful model, not a fixed timetable.', 'During introduction, promotion and launch costs may be high and sales low. Growth may bring rising sales and new competitors. Maturity often requires differentiation and cost control; decline may lead to renewal, repositioning or withdrawal.', 'Extension strategies such as redesign, new packaging, new uses, price changes or promotion may extend sales, but work only if customers respond.']],
+          ['Product portfolio and decisions', ['A business with several products can spread risk and serve different customer groups. It must decide which products to develop, maintain, reposition or remove.', 'Product decisions link to price, place and promotion. A premium product needs a consistent quality, pricing and distribution approach.']]
+        ]
+      },
+      12: {
+        vocab: [
+          ['Cost-plus pricing', 'Setting a price by adding a chosen mark-up to unit cost.'],
+          ['Penetration pricing', 'Launching at a relatively low price to attract customers and build market share.'],
+          ['Price skimming', 'Launching at a high price when early buyers may be willing to pay more.'],
+          ['Competitive pricing', 'Setting prices with reference to competitors’ prices.']
+        ],
+        sections: [
+          ['Pricing objectives and methods', ['Price affects sales revenue, profit per unit, brand image and customer perception. The price must be considered alongside costs, demand, competitors and the other elements of the marketing mix.', 'Cost-plus pricing adds a mark-up to unit cost and is straightforward, but may ignore demand and competitor prices. Competitive pricing considers rival offers but can trigger price competition.', 'Penetration pricing uses a low launch price to encourage trial and gain share; it may reduce margins and is more viable when costs can be covered at higher volume. Skimming begins high and may be suitable for an innovative product, but can attract competitors or limit early sales.']],
+          ['Other pricing approaches', ['Promotional pricing temporarily reduces the price to stimulate sales, but repeated discounts can train customers to wait. Psychological pricing uses price presentation to influence perception.', 'A business may charge different prices to customer groups or at different times where market conditions allow. Any approach must comply with relevant laws and be transparent.', 'A price change can affect demand, profit and competitor response. Estimate the likely change in sales and contribution, not just the effect on revenue.']],
+          ['Choosing a price', ['Consider production and marketing costs, customer willingness to pay, competitor positioning, product stage, objectives and the elasticity of demand.', 'The best price depends on context: a low price may increase volume but reduce unit contribution; a high price may support premium positioning but reduce the number of buyers.']]
+        ]
+      },
+      13: {
+        vocab: [
+          ['Distribution channel', 'The route through which a product moves from producer to customer.'],
+          ['Wholesaler', 'An intermediary that buys in bulk from producers and sells smaller quantities to retailers.'],
+          ['Retailer', 'A business that sells goods or services to final consumers.'],
+          ['Direct selling', 'Selling from the producer to the customer without an intermediary.']
+        ],
+        sections: [
+          ['Routes to market', ['A producer can sell directly to customers or use intermediaries such as agents, wholesalers and retailers. Each additional stage can provide reach and expertise but adds cost and reduces the producer’s control or margin.', 'Direct selling gives the business control over customer contact and may provide useful data, but it must manage sales, delivery and customer service itself.', 'Retailers offer convenient access and product choice. Wholesalers can buy in bulk, store stock and supply many retailers, which can help producers reach a wider market.']],
+          ['Choosing channels and location', ['Channel choice depends on the product, target customers, order size, perishability, need for demonstration or service, distribution costs and competitor practice.', 'Online channels can provide broad reach and sales data but require reliable digital systems, fulfilment, returns and customer support. Physical outlets may give customers the chance to see, try or collect products.', 'A business’s own location decisions involve access to customers, suppliers, labour, transport, premises cost and infrastructure. The relative importance of each factor differs between retail, service and manufacturing businesses.']],
+          ['Distribution performance', ['Reliable delivery, stock availability and convenient access contribute to customer satisfaction. Poor distribution can lose sales even when the product and promotion are strong.', 'Businesses should compare total channel costs and service levels, not just the cost of transporting each unit.']]
+        ]
+      },
+      14: {
+        vocab: [
+          ['Promotion', 'Communication intended to inform, persuade or remind customers about a product or business.'],
+          ['Advertising', 'Paid communication through media such as print, broadcast or digital channels.'],
+          ['Sales promotion', 'A short-term incentive intended to encourage purchase or trial.'],
+          ['Public relations', 'Activities aimed at building and maintaining a positive relationship and reputation with the public.']
+        ],
+        sections: [
+          ['Promotion objectives and methods', ['Promotion can inform customers about a new product, persuade them to switch, remind existing customers or build brand awareness. The message should suit the audience and objective.', 'Advertising reaches audiences through channels such as television, print, outdoor media and digital platforms. It can reach many people but may be expensive and difficult to measure.', 'Sales promotions include discounts, coupons, competitions, samples and loyalty offers. They may boost short-term sales but can reduce margins or weaken the product’s perceived value if overused.']],
+          ['Personal communication and reputation', ['Personal selling allows staff to explain a product, answer questions and adapt to the customer. It is useful for complex or high-value products, but is labour-intensive.', 'Public relations includes communication with the media and community, events and responses to issues. It can build credibility, though the business has less control over independent coverage.', 'Digital promotion can target specific audiences and measure engagement, but requires appropriate content, privacy-respecting data practices and regular monitoring.']],
+          ['Integrated promotion', ['Promotion decisions should fit the product, price and place strategy, as well as the brand image and target market.', 'Businesses evaluate promotion by comparing its cost with outcomes such as reach, enquiries, conversion, repeat purchases and profit. A rise in sales alone does not prove which promotional method caused it.']]
+        ]
+      },
+      15: {
+        vocab: [
+          ['E-commerce', 'Buying and selling goods or services using electronic networks, especially the internet.'],
+          ['Online marketplace', 'A digital platform that connects multiple sellers with customers.'],
+          ['Digital payment', 'A payment made electronically rather than with physical cash.'],
+          ['Fulfilment', 'The process of receiving, preparing and delivering a customer’s order.']
+        ],
+        sections: [
+          ['How e-commerce works', ['A business can sell through its own website, an online marketplace or a platform integrated with physical operations. Customers can search, compare, order and pay online.', 'E-commerce can extend trading hours and geographic reach, reduce the need for some premises and make it easier to collect customer and sales data. It can help smaller firms reach customers beyond their local area.', 'The customer experience depends on accurate product information, secure payment, stock visibility, reliable delivery, easy returns and responsive support.']],
+          ['Benefits and risks for businesses', ['Online sales can expand the potential market, provide measurable promotion and enable direct customer relationships. Digital tools can support inventory and order processing.', 'Competition is visible and intense; customers can compare prices quickly. Costs include website or platform fees, digital promotion, payment processing, delivery, returns and cyber-security measures.', 'Technical failures, fraud, privacy breaches, delivery problems and negative online reviews can damage trust. The business needs secure systems, clear policies and contingency plans.']],
+          ['Benefits and risks for customers', ['Customers can shop at convenient times, compare alternatives and access a wider range. They may face delivery delays, difficulty assessing product quality before purchase, return costs or concerns about security and privacy.', 'E-commerce is not suitable for every product or customer. A business should consider digital access, customer preferences and whether online service can meet expectations.']]
+        ]
+      },
+      16: {
+        vocab: [
+          ['Marketing strategy', 'A coordinated plan for reaching marketing objectives and serving chosen customers.'],
+          ['Market entry', 'The way a business begins selling in a new market or country.'],
+          ['Tariff', 'A tax imposed on imported goods.'],
+          ['Consumer protection', 'Rules intended to protect customers from unsafe, misleading or unfair business practices.']
+        ],
+        sections: [
+          ['Planning marketing strategy', ['A marketing strategy connects research, target market, product, price, place and promotion. The choices should reinforce one another and support the business’s overall objectives.', 'Before entering a new market, assess customer demand, competitors, culture, infrastructure, laws, distribution, exchange-rate exposure and the resources required.', 'Entry methods may include exporting, using an agent or distributor, licensing, franchising, a joint venture or setting up operations. Each offers a different balance of cost, control, risk and local knowledge.']],
+          ['International markets and adaptation', ['A larger market can create sales opportunities and economies of scale, but also brings unfamiliar competitors, legal requirements and operating risks.', 'A business may standardise an offer to reduce costs or adapt products, packaging, promotion and service to local tastes and laws. Research should guide the balance.', 'Trade barriers, tariffs, quotas, transport costs and exchange-rate changes can affect the price and competitiveness of a product in another country.']],
+          ['Legal controls in marketing', ['Relevant rules may cover product safety, accurate descriptions, weights and measures, warranties, advertising claims, consumer rights and competition. Requirements differ between countries and should be checked for each market.', 'Compliance can add costs and restrict some practices, but can protect customers and build confidence. Misleading claims or unsafe products may lead to penalties, legal action and reputational damage.']]
+        ]
+      },
+      17: {
+        vocab: [
+          ['Production', 'The process of converting inputs into goods or services.'],
+          ['Productivity', 'Output produced per unit of input over a given period.'],
+          ['Job production', 'Making a single product or a small quantity to a customer’s specific requirements.'],
+          ['Flow production', 'Producing standardised items continuously through a sequence of processes.']
+        ],
+        sections: [
+          ['Production and productivity', ['Production combines inputs such as materials, labour, equipment and information to create output. Efficient operations aim to use resources well while meeting customer requirements.', 'Productivity measures output relative to an input. Labour productivity = output ÷ number of employees (for the same period). It can rise through training, better equipment, improved methods or employee motivation.', 'Higher productivity can lower unit costs and improve competitiveness, but managers should also monitor quality, safety, waste and employee wellbeing.']],
+          ['Methods of production', ['Job production makes a distinct item or provides a service for a specific customer. It offers customisation but can be slow and costly per unit.', 'Batch production makes a group of similar products before equipment or processes are changed for another batch. It offers variety and some scale benefits but may create work-in-progress and changeover time.', 'Flow production makes standardised products continuously or in a sequence. It can achieve high output and low unit costs, but requires investment and can be inflexible if demand or product design changes.']],
+          ['Choosing and improving a method', ['The suitable method depends on demand volume and variety, product design, required quality, available finance, labour skills and flexibility needs.', 'Improving workflow, training, maintenance, stock control and communication can reduce delays and waste. Changes should be evaluated against total cost and quality, not output alone.']]
+        ]
+      },
+      18: {
+        vocab: [
+          ['Computer-aided design (CAD)', 'Software used to create, test or modify product designs digitally.'],
+          ['Computer-aided manufacturing (CAM)', 'Computer-controlled equipment used to carry out manufacturing processes.'],
+          ['Automation', 'Using technology or machines to perform tasks with reduced direct human input.'],
+          ['EPOS', 'Electronic point of sale systems that record sales and can update stock information.']
+        ],
+        sections: [
+          ['Technology in production', ['CAD can speed design changes, test designs digitally and help improve accuracy. CAM uses computer-controlled machinery to make products consistently and can link design directly to production.', '3D printing creates a physical object from a digital design by building material in layers. It can support prototypes and customised or low-volume items, although speed, material choice and unit cost may limit large-scale use.', 'In services and retail, EPOS and contactless payment systems can speed transactions and provide sales data. Artificial intelligence can help analyse information or automate some tasks, subject to reliable data and oversight.']],
+          ['Benefits to businesses', ['Technology can increase output, consistency, precision and speed; reduce some labour costs, errors and waste; and help a firm respond to orders or customise products.', 'Data from digital systems can improve stock management, scheduling and decision-making. Faster, more reliable service may improve customer experience.', 'Technology requires investment, maintenance, training and secure data systems. The benefit depends on whether higher efficiency or sales justify these costs.']],
+          ['Effects on employees and implementation', ['Automation can remove repetitive or hazardous tasks and create demand for technical skills. It can also reduce some roles, require retraining and cause anxiety about job security.', 'Businesses should assess the effect on work design, staffing, training, safety and communication before introducing technology.', 'Technology should support a clear operational objective. A system that is poorly selected, integrated or maintained can interrupt production rather than improve it.']]
+        ]
+      },
+      19: {
+        vocab: [
+          ['Sustainable production', 'Producing goods and services while considering long-term environmental and social effects.'],
+          ['External cost', 'A cost of an activity borne by people outside the business or transaction.'],
+          ['Resource depletion', 'The reduction of finite natural resources through their use.'],
+          ['Recycling', 'Processing used materials so they can be used again.']
+        ],
+        sections: [
+          ['Business activity and environmental impact', ['Production and distribution can create pollution, waste, noise and greenhouse gas emissions. Businesses may also use scarce materials, water and energy.', 'An external cost is borne by others rather than fully paid by the business. Pollution can affect communities and ecosystems even when it does not appear in the firm’s own accounts.', 'Environmental damage and resource depletion can create future costs, supply risks and conflict with communities or regulators.']],
+          ['How businesses respond', ['Businesses can reduce energy and water use, prevent pollution, redesign packaging, reuse or recycle materials, reduce waste and select more sustainable inputs or suppliers.', 'Cleaner production may lower resource and disposal costs and improve reputation, but it can require investment, new processes or higher-cost materials.', 'Environmental management should consider the full life cycle of inputs, production, use and disposal rather than one stage alone.']],
+          ['Evaluating sustainability choices', ['Governments may use laws, standards, taxes or incentives to influence environmental behaviour. Legal requirements differ by location and can affect production methods and costs.', 'Customers, employees, investors and local communities may expect responsible behaviour. A credible response should be measurable and supported by actual operating changes.', 'Managers weigh short-term costs against long-term savings, risk reduction, compliance, customer demand and reputation. Sustainability is most effective when built into everyday decisions.']]
+        ]
+      },
+      20: {
+        vocab: [
+          ['Fixed cost', 'A cost that does not change directly with output over a stated period and capacity range.'],
+          ['Variable cost', 'A cost that changes as output changes.'],
+          ['Contribution', 'Selling price minus variable cost per unit; it contributes towards fixed costs and then profit.'],
+          ['Break-even output', 'The output level at which total revenue equals total costs.']
+        ],
+        sections: [
+          ['Costs and scale', ['Fixed costs include costs such as rent that do not directly vary with output within a relevant range. Variable costs, such as materials per unit, usually rise with output.', 'Total cost = fixed costs + total variable costs. Average cost = total cost ÷ output. Cost behaviour can change when capacity is reached or suppliers change prices.', 'Economies of scale can reduce average cost as output grows, for example through bulk purchasing or spreading fixed costs. Diseconomies of scale can arise from coordination, communication or control problems as the business becomes larger.']],
+          ['Contribution and break-even', ['Contribution per unit = selling price per unit - variable cost per unit. Total contribution pays fixed costs; output above break-even may generate profit if assumptions hold.', 'Break-even output = fixed costs ÷ contribution per unit. At break-even, total revenue equals total cost; there is no profit or loss.', 'A break-even chart shows fixed costs, total costs and revenue. The break-even point is where revenue and total cost lines meet. The margin of safety is actual or planned output minus break-even output.']],
+          ['Using break-even analysis', ['Managers can use the analysis to compare prices, costs, output targets and proposed changes. A greater margin of safety means output can fall further before a loss is made.', 'The model assumes costs and selling price are predictable and output is sold. In reality, prices, costs, product mix and demand may change, so the result is an estimate rather than a guarantee.', 'Check units and calculations, and explain what the result means for the particular business.']]
+        ]
+      },
+      21: {
+        vocab: [
+          ['Quality', 'The extent to which a good or service meets customer expectations and requirements.'],
+          ['Quality control', 'Checking output, often at stages or at the end, to identify defects.'],
+          ['Quality assurance', 'A system designed to prevent defects by building agreed standards into each stage of work.'],
+          ['Total quality management', 'An approach involving employees across the business in continuous improvement and customer-focused quality.']
+        ],
+        sections: [
+          ['Why quality matters', ['Consistent quality can improve customer satisfaction, repeat purchases, reputation and the ability to charge a suitable price. It can reduce returns, waste, rework and complaints.', 'Poor quality can increase costs and damage trust. The impact may be especially serious where safety or reliability is important.', 'The appropriate quality level depends on the target market and product purpose. Higher specification is not always better if customers do not value it or the cost makes the product uncompetitive.']],
+          ['Quality systems', ['Quality control inspects inputs or finished output and separates defective items. Inspection can identify problems but may find them only after time and resources have already been spent.', 'Quality assurance sets procedures and standards throughout production so that work is done correctly at each stage. It aims to prevent errors rather than only detect them.', 'Total quality management treats quality as everyone’s responsibility and seeks continuous improvement using employee involvement and customer feedback. It needs training and commitment.']],
+          ['Costs, standards and evaluation', ['Quality-related costs can include inspection, training, prevention, returns, repairs and lost customers. Prevention and process improvement may reduce failure costs over time.', 'External standards or certification can demonstrate that processes meet defined requirements, but obtaining and maintaining them can cost time and money.', 'Monitor defects, complaints, returns, delivery performance and customer feedback. Use evidence to identify root causes and improve processes.']]
+        ]
+      },
+      22: {
+        vocab: [
+          ['Location decision', 'Choosing where a business or business activity should operate.'],
+          ['Infrastructure', 'Facilities and systems such as transport, utilities and communications that support operations.'],
+          ['Relocation', 'Moving an existing business activity to a different site or region.'],
+          ['Outsourcing', 'Using an external supplier to perform an activity previously done within the business.']
+        ],
+        sections: [
+          ['Factors affecting location', ['A business may consider closeness to customers, suppliers and raw materials; transport links; labour availability and skills; premises and land costs; utilities; and access to finance or support services.', 'Retailers and many service firms often value customer access and visibility. Manufacturers may prioritise land, transport, input supply, energy and room to expand. Online businesses may still need suitable logistics and data infrastructure.', 'Government incentives, tax, planning rules, environmental requirements and political or economic stability may influence a location choice.']],
+          ['Domestic and international choices', ['A business choosing an overseas location may seek new customers, lower costs, specialist skills or access to resources. It must also assess language, culture, legal requirements, exchange-rate risk and supply-chain reliability.', 'Relocation can lower some costs or improve access, but creates transition costs and risks disruption, loss of experienced staff or damage to local relationships.', 'Businesses may outsource selected activities to external providers. This can give access to expertise or lower costs, but reduces direct control and may create quality, confidentiality or dependency risks.']],
+          ['Making the decision', ['Use the business’s objectives and operational needs to rank factors. A low-cost location is not necessarily best if delivery, quality or customer access suffers.', 'Compare total costs and benefits over time, including setup, transport, training, taxes, compliance and the cost of changing location.']]
+        ]
+      },
+      23: {
+        vocab: [
+          ['Working capital', 'Current assets minus current liabilities; a measure of short-term financial resources.'],
+          ['Retained profit', 'Profit kept in the business after distributions to owners.'],
+          ['Overdraft', 'A short-term bank facility allowing a business account to go below zero up to an agreed limit.'],
+          ['Leasing', 'Paying to use an asset for a period rather than buying it outright.']
+        ],
+        sections: [
+          ['Why finance is needed', ['Start-ups need funds for premises, equipment, stock, promotion and early operating costs. Established businesses may need finance for replacement assets, expansion, new products or temporary cash-flow gaps.', 'Working capital = current assets - current liabilities. Too little working capital can make it difficult to pay suppliers, wages and other short-term obligations even when the business is profitable.', 'Finance should be matched to its purpose and repayment period. Long-term assets are generally financed with longer-term funds, while short-term needs may use short-term facilities.']],
+          ['Internal and external sources', ['Internal sources include retained profit, sale of surplus assets and owners’ capital. They avoid some borrowing costs and external control, but may be limited or have another opportunity cost.', 'External sources include bank loans, overdrafts, trade credit, leasing, hire purchase, share capital and other finance. Availability, cost, security, control and repayment requirements differ.', 'A loan provides a known sum with agreed repayments and interest. An overdraft is flexible for short-term needs but may be repayable on demand and carry variable charges. Trade credit delays payment to suppliers, but late payment can harm relationships.']],
+          ['Selecting finance', ['Leasing provides use of an asset without immediate purchase; hire purchase spreads payment and usually leads to ownership after final payment. Compare total payments, maintenance, flexibility and ownership terms.', 'A company may issue shares to raise capital, but existing owners’ control may be diluted. Retained profit avoids interest but is only available if profits have been earned and kept.', 'Choose by comparing amount needed, duration, cash-flow capacity, total cost, risk, security and effect on control. A business should not select a source on interest rate alone.']]
+        ]
+      },
+      24: {
+        vocab: [
+          ['Cash flow', 'The movement of money into and out of a business over time.'],
+          ['Cash inflow', 'Money received by the business, such as sales receipts or a loan.'],
+          ['Net cash flow', 'Cash inflows minus cash outflows over a period.'],
+          ['Closing balance', 'The cash balance at the end of a period, carried forward as the next period’s opening balance.']
+        ],
+        sections: [
+          ['Preparing a cash-flow forecast', ['A cash-flow forecast estimates when cash will be received and paid. Inflows may include cash sales, customer payments, asset sales or finance; outflows may include materials, wages, rent, equipment and loan repayments.', 'Net cash flow = total cash inflows - total cash outflows. Closing balance = opening balance + net cash flow. The closing balance of one period becomes the opening balance of the next.', 'Forecasts should use realistic timing. A credit sale is recorded as cash when payment is expected, not necessarily when the sale is made.']],
+          ['Cash flow and profit', ['Cash flow and profit are different. A business can make a profit but lack cash if customers pay late or if it spends heavily on stock and equipment. A cash surplus in a period does not automatically mean the business is profitable.', 'A forecast helps identify when a cash shortage or surplus may occur so managers can plan finance, adjust spending, accelerate collections or reschedule investment.', 'A negative balance signals that available cash may not cover planned payments. The business must arrange funding or revise timing before the shortfall occurs.']],
+          ['Improving and reviewing cash flow', ['Possible actions include faster customer collection, deposits, better credit control, negotiating supplier terms, reducing unnecessary stock, controlling spending or arranging suitable finance.', 'Actions involve trade-offs. Stricter customer credit may reduce sales; delaying suppliers can damage relationships; reducing stock too far can cause lost sales.', 'Forecasts are estimates. Compare actual results with forecast, investigate variances and update assumptions when sales, costs or payment timing changes.']]
+        ]
+      },
+      25: {
+        vocab: [
+          ['Revenue', 'Income from sales, usually calculated as selling price multiplied by quantity sold.'],
+          ['Cost of sales', 'The cost of the goods sold during an accounting period.'],
+          ['Gross profit', 'Revenue minus cost of sales.'],
+          ['Profit for the year', 'The remaining profit after relevant expenses and charges are deducted from gross profit.']
+        ],
+        sections: [
+          ['Income statement structure', ['An income statement reports financial performance over a period. It begins with revenue from sales and deducts cost of sales to calculate gross profit.', 'Gross profit = revenue - cost of sales. Expenses such as rent, wages, utilities and promotion are then deducted to calculate profit from operations; other income, interest and tax may also be shown depending on the format.', 'Profit is not the same as cash. Credit sales may be included in revenue before cash is collected, while some cash payments relate to assets or liabilities rather than current-period expenses.']],
+          ['What the figures show', ['Gross profit reflects sales income after direct cost of goods sold. A change may result from selling prices, sales volume, product mix or costs of materials and production.', 'Profit after expenses indicates whether revenue covers the wider costs of operating the business. Rising revenue does not guarantee rising profit if costs grow faster.', 'Retained profit is the part kept in the business after any distributions and relevant tax. It can provide an internal source of finance.']],
+          ['Using and interpreting accounts', ['Compare results across periods and with similar businesses, taking account of size, accounting period and market conditions.', 'Accounts help owners, managers, lenders and investors assess performance, but historical figures do not guarantee future results and can be affected by estimates or accounting policies.', 'Use numerical evidence and explain possible causes. Do not conclude that a business is healthy from profit alone; also consider cash flow, liabilities and liquidity.']]
+        ]
+      },
+      26: {
+        vocab: [
+          ['Asset', 'A resource controlled by a business that has economic value.'],
+          ['Liability', 'An amount the business owes to another party.'],
+          ['Current asset', 'An asset expected to be converted into cash, sold or used within the normal operating cycle or short term.'],
+          ['Capital employed', 'Long-term finance invested in the business, commonly represented by equity plus non-current liabilities.']
+        ],
+        sections: [
+          ['Purpose and structure', ['A statement of financial position shows a business’s assets, liabilities and equity at a particular date. It is a snapshot, unlike the income statement, which covers a period.', 'Non-current assets are held for longer-term use, such as premises and machinery. Current assets include inventory, trade receivables and cash.', 'Current liabilities are due in the short term, such as trade payables and overdrafts. Non-current liabilities include longer-term borrowing. Equity represents the owners’ claim after liabilities.']],
+          ['Working capital and capital employed', ['Working capital = current assets - current liabilities. It indicates the net amount of short-term resources available, but its quality depends on how quickly inventory and receivables can become cash.', 'Capital employed is long-term finance in the business and is commonly calculated as equity plus non-current liabilities, or total assets minus current liabilities.', 'A business with high inventory or overdue receivables may still experience cash pressure despite a positive working-capital figure.']],
+          ['Interpreting the statement', ['The statement helps assess resources, debts and the balance between short-term and long-term finance. Lenders may use it when assessing risk.', 'Compare values over time and with similar firms. Asset values may be based on accounting conventions and do not necessarily equal the amount obtainable from selling assets.', 'A strong position cannot be judged by one figure alone. Consider liquidity, profitability, cash flow, asset use and the business’s future commitments.']]
+        ]
+      },
+      27: {
+        vocab: [
+          ['Gross profit margin', 'Gross profit expressed as a percentage of revenue.'],
+          ['Profit margin', 'Profit expressed as a percentage of revenue.'],
+          ['ROCE', 'Return on capital employed; profit compared with the long-term finance invested.'],
+          ['Liquidity', 'The ability of a business to meet short-term obligations as they fall due.']
+        ],
+        sections: [
+          ['Profitability ratios', ['Gross profit margin = gross profit ÷ revenue × 100. It shows gross profit earned from each unit of sales revenue before operating expenses.', 'Profit margin = profit ÷ revenue × 100. It shows the proportion of revenue left as profit after the relevant expenses in the calculation.', 'ROCE = profit ÷ capital employed × 100. It compares profit with long-term finance invested and is used to assess how effectively that capital generates returns. Use a consistent profit measure when comparing.']],
+          ['Liquidity ratios', ['Current ratio = current assets ÷ current liabilities. It compares short-term resources with amounts due in the short term.', 'Acid test ratio = (current assets - inventory) ÷ current liabilities. It excludes inventory, which may take time to sell, and tests a stricter form of short-term liquidity.', 'Ratios are indicators rather than universal targets. A suitable level varies by industry, payment terms and how quickly assets can be turned into cash.']],
+          ['Analysis and decisions', ['Compare ratios with prior periods, competitors or suitable industry information. Identify the direction and size of change before suggesting causes.', 'A falling margin may reflect higher costs, lower prices or a changed sales mix; weak liquidity may reflect slow customer payments, high inventory or short-term borrowing.', 'Ratios are based on accounting data and can be affected by seasonality, one-off events and different accounting methods. Use them with cash-flow and business-context evidence.']]
+        ]
+      },
+      28: {
+        vocab: [
+          ['Business cycle', 'Fluctuations in economic activity, often described through boom, recession, slump and recovery.'],
+          ['Inflation', 'A sustained rise in the general price level.'],
+          ['Unemployment', 'The condition of people willing and able to work but unable to find a job.'],
+          ['Interest rate', 'The cost of borrowing and the return on saving, usually expressed as a percentage.']
+        ],
+        sections: [
+          ['Economic activity and the cycle', ['The business cycle describes changes in national output and activity. A boom typically has rising output and spending; a recession or slump involves falling activity; recovery follows as output begins to rise again.', 'Economic growth can create opportunities through higher demand and investment. A downturn may reduce sales, make capacity unused and increase pressure on cash flow.', 'The effects vary between industries. Essential goods, luxury goods, exports and construction may respond differently to changes in income and confidence.']],
+          ['Inflation, income and employment', ['Inflation means the general price level rises. Higher input prices can increase costs; businesses may raise prices, reduce margins or seek efficiencies. Customers’ purchasing power may fall if income does not keep pace.', 'Real income is income adjusted for changes in prices. When prices rise faster than wages, households can afford less, which may reduce demand for some products.', 'Unemployment can reduce consumer spending and increase social costs, but may make labour easier to recruit. The overall effect depends on skills, location and the economic situation.']],
+          ['Government policy and business response', ['Taxes on business profit can reduce retained earnings; taxes on personal income can affect disposable income and demand. Government spending can create contracts, employment and demand for suppliers.', 'Higher interest rates can increase loan repayments and discourage some borrowing or spending; lower rates can reduce borrowing costs but effects vary by business and household.', 'Businesses monitor economic indicators, review prices and costs, protect cash flow, adjust output and consider investment carefully. Forecasting alternative scenarios helps prepare for change.']]
+        ]
+      },
+      29: {
+        vocab: [
+          ['Globalisation', 'Increasing connections and interdependence between countries through trade, investment, technology and movement of information.'],
+          ['Multinational company', 'A business with operations in more than one country.'],
+          ['Tariff', 'A tax on imports that can raise their price.'],
+          ['Exchange rate', 'The price of one currency expressed in another currency.']
+        ],
+        sections: [
+          ['Globalisation and multinational businesses', ['Globalisation allows businesses to sell, source, invest and operate across borders. It is supported by transport, communications, trade and international investment.', 'A multinational company operates in more than one country. It may gain access to new customers, resources, skills or lower-cost production, but faces coordination, cultural, legal and currency challenges.', 'Host countries may gain investment, employment, skills and tax revenue. Possible disadvantages include pressure on local firms, profit transfers abroad, environmental costs or dependence on a large employer.']],
+          ['Trade barriers and external effects', ['A tariff is a tax on imported goods and may protect domestic producers but raises costs for importers and customers. An import quota restricts the quantity of a good that can enter a country.', 'Trade restrictions can affect prices, supply choices and access to markets. Businesses should assess current rules and possible policy changes in the countries where they trade.', 'Business activity can create external costs, such as pollution or congestion, and external benefits, such as training or infrastructure spillovers. These effects may not be reflected in the market price.']],
+          ['Exchange rates and competitiveness', ['An exchange rate changes the domestic-currency cost of imports and the foreign-currency price of exports. A currency appreciation can make exports more expensive to overseas buyers and imports cheaper; a depreciation can have the opposite effects.', 'The impact depends on the currency of invoices, the share of imported inputs, pricing decisions and how responsive customers are. A weaker currency may raise costs for an importer even as it helps exporters.', 'Businesses can monitor currencies, adjust suppliers or prices and consider ways to manage risk. The outcome is not automatic because competitors, demand and contracts also matter.']]
+        ]
+      },
+      30: {
+        vocab: [
+          ['Environmental impact', 'The effects a business’s activities have on the natural environment.'],
+          ['Pollution', 'The release of substances or energy that can harm people or the environment.'],
+          ['Finite resource', 'A resource that exists in limited quantities and can be depleted.'],
+          ['Environmental regulation', 'Rules that set limits or requirements for business activities affecting the environment.']
+        ],
+        sections: [
+          ['Impacts of business activity', ['Businesses can contribute to air, water and noise pollution through production, transport and waste. Extraction and consumption can deplete finite resources and damage habitats.', 'Environmental effects may create costs for communities and future generations that are not paid directly by the business. These are external costs.', 'Environmental damage can also create business risks, including regulation, clean-up costs, disruption to supplies and loss of customer trust.']],
+          ['Why businesses respond', ['A business may act to comply with law, reduce waste and energy costs, respond to customer expectations, protect its reputation or prepare for future resource constraints.', 'Environmental measures can include cleaner technologies, efficient energy use, recycling, waste reduction, sustainable sourcing and redesigning packaging or products.', 'Changes may require investment and can increase some short-term costs. Managers compare these with savings, reduced risk, customer value and long-term viability.']],
+          ['Controls and implementation', ['Governments may use environmental laws, standards, taxes, permits or incentives. Requirements differ across locations and industries, so businesses must check the rules that apply to them.', 'Set clear targets, assign responsibility, monitor resource use and emissions, and report progress accurately. Environmental claims should be supported by evidence.', 'A practical environmental strategy considers suppliers, operations, distribution, product use and disposal rather than focusing only on visible actions.']]
+        ]
+      },
+      31: {
+        vocab: [
+          ['Business ethics', 'Principles about right and wrong that guide business conduct.'],
+          ['Pressure group', 'An organised group seeking to influence business or government decisions on an issue.'],
+          ['Ethical sourcing', 'Choosing suppliers and inputs with consideration for working conditions, rights and wider impacts.'],
+          ['Corporate social responsibility', 'A business’s consideration of social and environmental effects alongside financial objectives.']
+        ],
+        sections: [
+          ['Ethical issues in business', ['Ethical questions can involve working conditions, fair pay, discrimination, product safety, honest promotion, animal welfare, environmental impact and responsible supply chains.', 'A business may adopt codes of conduct, supplier standards, audits, staff training and complaint procedures. Policies matter only when they influence actual decisions and are monitored.', 'Ethical decisions can involve trade-offs between cost, speed, profit and stakeholder welfare. Expectations and laws can differ between countries, so businesses should consider both local requirements and their own standards.']],
+          ['Benefits and challenges of ethical conduct', ['Responsible conduct can strengthen trust, attract customers and employees, reduce legal or supply-chain risks and support long-term reputation.', 'Ethical sourcing or improved conditions can increase costs, require monitoring and make some suppliers harder to replace. Benefits may take time and may be difficult to measure.', 'Businesses should avoid unsupported claims. Evidence, transparency and corrective action are more credible than a policy statement alone.']],
+          ['Pressure groups and influence', ['Pressure groups organise to draw attention to an issue and influence businesses, consumers or governments. They may use campaigns, petitions, research, demonstrations, media coverage or engagement with decision-makers.', 'A campaign can affect reputation, sales, recruitment and investor confidence. Businesses may respond by explaining their position, changing practices, consulting stakeholders or challenging inaccurate claims.', 'Evaluate a pressure group’s influence by considering public support, evidence, media attention, consumer choices and the business’s ability to respond. Different groups can represent conflicting interests.']]
+        ]
+      }
+    };
+
+    function makeChapterDataTemplate(chapterNumber, title, summaryText, sectionLabel) {
+      const material = chapterStudyNotes[chapterNumber];
+      const mcq = material.vocab.map(([term, definition], index) => {
+        const answerIndex = (chapterNumber + index) % material.vocab.length;
+        const options = material.vocab
+          .filter(([optionTerm]) => optionTerm !== term)
+          .map(([optionTerm]) => optionTerm);
+        options.splice(answerIndex, 0, term);
+
+        return [
+          `Which term matches this definition: ${definition}`,
+          options,
+          String.fromCharCode(65 + answerIndex),
+          `${term}: ${definition}`
+        ];
+      });
+
+      const notesHtml = `
+        <div class="study-notes">
+          <div class="info-box study-note-intro">Study notes summarised and paraphrased from the uploaded teaching materials. Use the key ideas with business context in your exam answers.</div>
+          ${material.sections.map(([heading, points]) => `
+            <h4>${heading}</h4>
+            <ul>${points.map(point => `<li>${point}</li>`).join('')}</ul>
+          `).join('')}
+        </div>
+      `;
+
+      return {
+        title,
+        vocab: material.vocab.map(([term, definition]) => [term, definition, `Apply ${term.toLowerCase()} to the business in the question.`]),
+        notes: notesHtml,
+        mcq,
+        exam: [
+          ['1(a)', 'Define', '2 marks', `Define "${material.vocab[0][0]}".`, material.vocab[0][1]],
+          ['1(b)', 'Explain', '4 marks', `Explain one reason why ${title.toLowerCase()} is important to a business.`, material.sections[0][1][0]]
+        ]
+      };
+    }
+
+    const chapterSet = [
+      [1, 'Business Activity and Economic Sectors', 'Business activity involves producing goods and services to satisfy human needs and wants using resources efficiently.', 'Understanding Business Activity'],
+      [2, 'Enterprise, Business Growth and Size', 'Enterprise involves identifying opportunities and taking risks to organise resources and create value.', 'Understanding Business Activity'],
+      [3, 'Types of Business Organisations', 'Different business organisations have different ownership structures, legal status and ways of raising finance.', 'Understanding Business Activity'],
+      [4, 'Business Objectives and Stakeholder Objectives', 'Businesses set objectives to guide decisions, while different stakeholders have different priorities and interests.', 'Understanding Business Activity'],
+      [5, 'Human Resource Management (HRM)', 'HRM ensures the right people are recruited, trained, motivated and managed effectively.', 'People in Business'],
+      [6, 'Organisation and Management', 'Businesses organise their structure and leadership style to improve communication, efficiency and coordination.', 'People in Business'],
+      [7, 'Methods of Communication', 'Communication helps managers and staff exchange information clearly and make decisions effectively.', 'People in Business'],
+      [8, 'Motivating Employees', 'Motivation helps employees perform well and remain committed to the organisation.', 'People in Business'],
+      [9, 'Marketing and the Market', 'Marketing focuses on identifying consumer needs and satisfying them profitably in a competitive market.', 'Marketing'],
+      [10, 'Market Research', 'Market research helps businesses collect and analyse information about customers and competitors.', 'Marketing'],
+      [11, 'The Marketing Mix - Product', 'Businesses design products and services to meet customer needs and create value.', 'Marketing'],
+      [12, 'The Marketing Mix - Price', 'Pricing decisions affect sales, profit, positioning and competitiveness.', 'Marketing'],
+      [13, 'The Marketing Mix - Place', 'Place involves how products reach customers and the channels used for distribution.', 'Marketing'],
+      [14, 'The Marketing Mix - Promotion', 'Promotion helps businesses communicate with customers and influence buying decisions.', 'Marketing'],
+      [15, 'E-commerce', 'E-commerce allows businesses to sell online and reach customers across a wider market.', 'Marketing'],
+      [16, 'Marketing Strategy, Entering New Markets and Legal Controls', 'Marketing strategy helps firms decide how to compete and grow while meeting legal requirements.', 'Marketing'],
+      [17, 'Production of Goods and Services', 'Production is the process of transforming resources into finished goods and services for sale.', 'Operations Management'],
+      [18, 'Technology and Production of Goods and Services', 'Technology can improve productivity, quality and speed in production.', 'Operations Management'],
+      [19, 'Sustainable Production of Goods and Services', 'Sustainability considers environmental and social impacts as businesses produce goods and services.', 'Operations Management'],
+      [20, 'Costs, Scale of Production and Break-even Analysis', 'Businesses must understand cost behaviour and break-even to make pricing and output decisions.', 'Operations Management'],
+      [21, 'Quality of Goods and Services', 'Quality affects customer satisfaction, reputation and repeat buying.', 'Operations Management'],
+      [22, 'Location Decisions', 'Location influences costs, access to customers, labour availability and transport links.', 'Operations Management'],
+      [23, 'Business Finance', 'Business finance supports operations, growth, investment and day-to-day cash needs.', 'Financial Information and Decisions'],
+      [24, 'Cash Flow Forecast', 'Cash flow forecasting helps a business plan receipts and payments to avoid shortages.', 'Financial Information and Decisions'],
+      [25, 'Profit and Loss', 'Profit and loss statements show whether a business has made a profit or loss over time.', 'Financial Information and Decisions'],
+      [26, 'Statement of Financial Position', 'The statement of financial position summarises assets, liabilities and capital at a point in time.', 'Financial Information and Decisions'],
+      [27, 'Analysis of Accounts', 'Businesses analyse accounts to assess performance, liquidity and profitability.', 'Financial Information and Decisions'],
+      [28, 'Economic Issues', 'Economic issues include inflation, unemployment, taxation and changes in spending.', 'External Influences on Business Activity'],
+      [29, 'Business and the International Economy', 'Global trade, exchange rates and international markets affect business performance and decisions.', 'External Influences on Business Activity'],
+      [30, 'Business and the Environment', 'Businesses must manage environmental impact while staying competitive and legally compliant.', 'External Influences on Business Activity'],
+      [31, 'Business and Ethical Issues, and Pressure Groups', 'Ethical behaviour and pressure groups influence business decisions and public perception.', 'External Influences on Business Activity']
+    ];
+
+    chapterSet.forEach(([num, title, summaryText, sectionLabel]) => {
+      const template = makeChapterDataTemplate(num, title, summaryText, sectionLabel);
+      addChapter(num, title, template.vocab, template.notes, template.mcq, template.exam);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('main-content').innerHTML = getHomeContent();
+      const firstBtn = document.querySelector('.nav-item.special');
+      if (firstBtn) firstBtn.classList.add('active');
+
+      document.addEventListener('change', event => {
+        const input = event.target;
+        if (!input.matches('input[type="radio"]')) return;
+
+        const question = input.closest('.mcq-question');
+        question.querySelectorAll('.mcq-option').forEach(option => {
+          option.classList.toggle('selected', option.contains(input));
+        });
+      });
+    });
+  </script>
+</body>
+</html>
